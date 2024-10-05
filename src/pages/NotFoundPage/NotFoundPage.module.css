@@ -1,0 +1,38 @@
+.notFoundPage {
+    text-align: center;
+    margin: 50px;
+  }
+  
+  .notFoundPage h1 {
+    font-size: 5rem;
+    color: #ff0000; /* Красный цвет для заголовка 404 */
+  }
+  
+  .notFoundPage h2 {
+    font-size: 2rem;
+  }
+  
+  .notFoundPage p {
+    font-size: 1.2rem;
+  }
+  
+  .notFoundPage button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff; /* Синий цвет для кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .notFoundPage button:hover {
+    background-color: #0056b3; /* Более темный синий при наведении */
+  }
+  
+  .notFoundPage a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  

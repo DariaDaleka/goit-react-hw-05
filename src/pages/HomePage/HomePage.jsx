@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import MovieList from "../../components/MovieList/MovieList";
-import { fetchTrendingMovies } from "../../services/api";
+import { getTrendingMovies } from "../../services/api";
 import css from "./HomePage.module.css";
 
 const HomePage = () => {
@@ -11,7 +11,7 @@ const HomePage = () => {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const trendingMovies = await fetchTrendingMovies();
+        const trendingMovies = await getTrendingMovies();
         setMovies(trendingMovies);
       } catch (error) {
         console.error("Error fetching trending movies:", error);

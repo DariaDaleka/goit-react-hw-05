@@ -1,0 +1,66 @@
+.movieDetailsPage {
+    padding: 20px;
+  }
+  
+  .movieDetailsPage button {
+    padding: 6px 12px;
+    font-size: 1em;
+    border: none;
+    background-color: antiquewhite;
+    color: black;
+    border: 2px solid darkgrey;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  .movieDetailsPage button:hover {
+    background-color: blueviolet;
+  }
+  
+  .movieDetailsPage h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .movieDetailsPage img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .movieDetailsPage p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .movieDetailsPage nav a {
+    margin-right: 20px;
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .movieDetailsPage nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .listDetailes {
+    color: blue;
+    text-decoration: underline;
+    font-size: 20px;
+    list-style: none;
+  }
+  
+  .movieDetailesBox {
+    display: flex;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+  }
