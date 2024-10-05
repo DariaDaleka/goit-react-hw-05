@@ -1,28 +1,30 @@
 import { NavLink, useLocation } from "react-router-dom";
-import css from "./MovieList.module.css";
+import s from "./MovieList.module.css";
+import clsx from "clsx";
+
+const buildLinkClass = ({ isActive }) => {
+  return clsx(s.link, isActive && s.active);
+};
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
 
-  
-  if (!movies?.length) {
-    return <p>No movies found.</p>;
-  }
-
   return (
-    <ul className={css.movieList}>
-      {movies.map((movie) => (
-        <li key={movie.id} className={css.movieItem}>
-          <NavLink
-            to={`/movies/${movie.id}`}
-            state={{ from: location }}
-            className={css.movieLink}
-          >
-            <span>{movie.title || "Untitled Movie"}</span>
-          </NavLink>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className={s.list}>
+        {movies.map((movie) => (
+          <li key={movie.id} className={s.item}>
+            <NavLink
+              to={`/movies/${movie.id}`}
+              state={{ from: location }}
+              className={buildLinkClass}
+            >
+              {movie.title}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 

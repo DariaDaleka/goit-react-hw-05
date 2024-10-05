@@ -1,28 +1,20 @@
-.moviesPage {
-    text-align: start;
-    padding: 20px;
-  }
-  
-  .searchForm {
-    margin-bottom: 20px;
-  }
-  
-  .searchForm input {
-    padding: 10px;
-    font-size: 1em;
-  }
-  
-  .searchForm button {
-    padding: 10px 15px;
-    font-size: 1em;
-    border: none;
-    background-color: rgb(228, 221, 221);
-    color: black;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .searchForm button:hover {
-    background-color: #aaaeb3;
-  }
+.title {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: grey;
+}
+
+.link:hover {
+  color: #646cff;
+  text-decoration: underline;
+}

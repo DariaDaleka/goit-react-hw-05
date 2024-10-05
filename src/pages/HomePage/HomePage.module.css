@@ -1,23 +1,13 @@
-.loadingMessage {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #555;
-  }
-  
-  .errorMessage {
-    text-align: center;
-    color: red;
-    font-size: 1.2rem;
-  }
-  
-  .noMoviesMessage {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #888;
-  }
-  
-  .homeTitle {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2rem;
-  }
+.title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: rgba(0, 0, 0, 0.688);
+}
+li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}

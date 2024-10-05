@@ -1,69 +1,53 @@
-import { fetchMovieCredits, getImageUrl } from "../../Api/Api";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import css from "./MovieCast.module.css";
+import { useState, useEffect } from "react";
+import { getMoviesCredits } from "../../services/api";
+import s from "./MovieCast.module.css";
+
+const defaultImg =
+  "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
 
 const MovieCast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const getCast = async () => {
-      setLoading(true); 
-      try {
-        const castData = await fetchMovieCredits(movieId);
-        setCast(castData);
-      } catch (error) {
-        console.error("Error fetching movie cast:", error);
-        setError("Failed to fetch cast information. Please try again later.");
-      } finally {
-        setLoading(false); 
-      }
-    };
-
-    getCast();
+    setError(null);
+    getMoviesCredits(movieId)
+      .then(setCast)
+      .catch(() => {
+        setError("Failed to load cast. Please try again later!");
+      });
   }, [movieId]);
 
- 
   if (error) {
-    return <p className={css.errorMessage}>{error}</p>;
+    return <p>{error}</p>;
   }
-
-  
-  if (loading) {
-    return <p className={css.loadingMessage}>Loading cast information...</p>;
-  }
-
- 
   if (cast.length === 0) {
-    return <p className={css.noCastMessage}>No cast information available.</p>;
+    return <p>No cast available for this movie</p>;
   }
 
   return (
-    <div>
-      <ul className={css.castList}>
+    <div className={s.wrapp}>
+      <h3>Actors:</h3>
+      <ul className={s.list}>
         {cast.map((actor) => (
-          <li key={actor.id} className={css.castItem}>
+          <li key={actor.cast_id} className={s.item}>
             <img
               src={
                 actor.profile_path
-                  ? getImageUrl(actor.profile_path)
-                  : "/placeholder-image.png" 
+                  ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+                  : defaultImg
               }
               alt={actor.name}
-              className={css.castImage}
+              className={s.img}
             />
-            <p>{actor.name}</p>
-            <p>
-              <strong>Character:</strong> {actor.character}
-            </p>
+        
+            <p className={s.text}>{actor.name}</p>
           </li>
         ))}
       </ul>
     </div>
   );
 };
-
 export default MovieCast;
