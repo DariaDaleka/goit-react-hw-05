@@ -1,0 +1,23 @@
+.loadingMessage {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .errorMessage {
+    text-align: center;
+    color: red;
+    font-size: 1.2rem;
+  }
+  
+  .noMoviesMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  .homeTitle {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+  }

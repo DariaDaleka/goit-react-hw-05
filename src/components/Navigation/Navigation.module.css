@@ -1,0 +1,29 @@
+/* Navigation.module.css */
+
+.navLink {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .accent {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .active {
+    background-color: #007bff; /* Пример активного фона */
+    color: white; /* Цвет текста для активной ссылки */
+  }
+  

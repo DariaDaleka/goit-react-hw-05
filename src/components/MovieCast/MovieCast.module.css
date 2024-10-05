@@ -1,0 +1,22 @@
+.movieCastBox {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .castList {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .castItem {
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .castImage {
+    width: 100px;
+    height: 125px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
